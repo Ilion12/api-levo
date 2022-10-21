@@ -22,101 +22,101 @@ public class PlanPreventivoListener {
 	
 	@PrePersist
 	@PreUpdate
-	public void preGuardarActualizarPlanPreventivo(PlanPreventivo planPreventivo) throws Exception {
-		if (planPreventivo.getLiquidoFrenosKm() < 0 || planPreventivo.getLiquidoFrenosKm() > 1000000) {
+	public void preGuardarActualizarPlanPreventivo(PlanPreventivo planesPreventivos) throws Exception {
+		if (planesPreventivos.getLiquidoFrenosKm() < 0 || planesPreventivos.getLiquidoFrenosKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getLiquidoFrenosMes() < 0 || planPreventivo.getLiquidoFrenosMes() > 200) {
+		if (planesPreventivos.getLiquidoFrenosMes() < 0 || planesPreventivos.getLiquidoFrenosMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
-		if (planPreventivo.getOperacionesSistematicasKm() < 0 || planPreventivo.getOperacionesSistematicasKm() > 1000000) {
+		if (planesPreventivos.getOperacionesSistematicasKm() < 0 || planesPreventivos.getOperacionesSistematicasKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getOperacionesSistematicasMes() < 0 || planPreventivo.getOperacionesSistematicasMes() > 200) {
+		if (planesPreventivos.getOperacionesSistematicasMes() < 0 || planesPreventivos.getOperacionesSistematicasMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
-		if (planPreventivo.getFiltroAireKm() < 0 || planPreventivo.getFiltroAireKm() > 1000000) {
+		if (planesPreventivos.getFiltroAireKm() < 0 || planesPreventivos.getFiltroAireKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getFiltroAireMes() < 0 || planPreventivo.getFiltroAireMes() > 200) {
+		if (planesPreventivos.getFiltroAireMes() < 0 || planesPreventivos.getFiltroAireMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
-		if (planPreventivo.getFiltroAireHabitaculoKm() < 0 || planPreventivo.getFiltroAireHabitaculoKm() > 1000000) {
+		if (planesPreventivos.getFiltroAireHabitaculoKm() < 0 || planesPreventivos.getFiltroAireHabitaculoKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getFiltroAireHabitaculoMes() < 0 || planPreventivo.getFiltroAireHabitaculoMes() > 200) {
+		if (planesPreventivos.getFiltroAireHabitaculoMes() < 0 || planesPreventivos.getFiltroAireHabitaculoMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
-		if (planPreventivo.getFiltroCombustibleKm() < 0 || planPreventivo.getFiltroCombustibleKm() > 1000000) {
+		if (planesPreventivos.getFiltroCombustibleKm() < 0 || planesPreventivos.getFiltroCombustibleKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getFiltroCombustibleMes() < 0 || planPreventivo.getFiltroCombustibleMes() > 200) {
+		if (planesPreventivos.getFiltroCombustibleMes() < 0 || planesPreventivos.getFiltroCombustibleMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
-		if (planPreventivo.getFiltroAntipolenKm() < 0 || planPreventivo.getFiltroAntipolenKm() > 1000000) {
+		if (planesPreventivos.getFiltroAntipolenKm() < 0 || planesPreventivos.getFiltroAntipolenKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getFiltroAntipolenMes() < 0 || planPreventivo.getFiltroAntipolenMes() > 200) {
+		if (planesPreventivos.getFiltroAntipolenMes() < 0 || planesPreventivos.getFiltroAntipolenMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
-		if (planPreventivo.getCorreaDistribucionKm() < 0 || planPreventivo.getCorreaDistribucionKm() > 1000000) {
+		if (planesPreventivos.getCorreaDistribucionKm() < 0 || planesPreventivos.getCorreaDistribucionKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getCorreaDistribucionMes() < 0 || planPreventivo.getCorreaDistribucionMes() > 200) {
+		if (planesPreventivos.getCorreaDistribucionMes() < 0 || planesPreventivos.getCorreaDistribucionMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
-		if (planPreventivo.getKitDistribucionKm() < 0 || planPreventivo.getKitDistribucionKm() > 1000000) {
+		if (planesPreventivos.getKitDistribucionKm() < 0 || planesPreventivos.getKitDistribucionKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getKitDistribucionMes() < 0 || planPreventivo.getKitDistribucionMes() > 200) {
+		if (planesPreventivos.getKitDistribucionMes() < 0 || planesPreventivos.getKitDistribucionMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
-		if (planPreventivo.getReglajeProyectoresKm() < 0 || planPreventivo.getReglajeProyectoresKm() > 1000000) {
+		if (planesPreventivos.getReglajeProyectoresKm() < 0 || planesPreventivos.getReglajeProyectoresKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getReglajeProyectoresMes() < 0 || planPreventivo.getReglajeProyectoresMes() > 200) {
+		if (planesPreventivos.getReglajeProyectoresMes() < 0 || planesPreventivos.getReglajeProyectoresMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
-		if (planPreventivo.getpHLiquidoRefrigeracionKm() < 0 || planPreventivo.getpHLiquidoRefrigeracionKm() > 1000000) {
+		if (planesPreventivos.getpHLiquidoRefrigeracionKm() < 0 || planesPreventivos.getpHLiquidoRefrigeracionKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getpHLiquidoRefrigeracionMes() < 0 || planPreventivo.getpHLiquidoRefrigeracionMes() > 200) {
+		if (planesPreventivos.getpHLiquidoRefrigeracionMes() < 0 || planesPreventivos.getpHLiquidoRefrigeracionMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
-		if (planPreventivo.getLiquidoRefrigeracionKm() < 0 || planPreventivo.getLiquidoRefrigeracionKm() > 1000000) {
+		if (planesPreventivos.getLiquidoRefrigeracionKm() < 0 || planesPreventivos.getLiquidoRefrigeracionKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getLiquidoRefrigeracionMes() < 0 || planPreventivo.getLiquidoRefrigeracionMes() > 200) {
+		if (planesPreventivos.getLiquidoRefrigeracionMes() < 0 || planesPreventivos.getLiquidoRefrigeracionMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
-		if (planPreventivo.getCorreaArrastreAccesoriosKm() < 0 || planPreventivo.getCorreaArrastreAccesoriosKm() > 1000000) {
+		if (planesPreventivos.getCorreaArrastreAccesoriosKm() < 0 || planesPreventivos.getCorreaArrastreAccesoriosKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getCorreaArrastreAccesoriosMes() < 0 || planPreventivo.getCorreaArrastreAccesoriosMes() > 200) {
+		if (planesPreventivos.getCorreaArrastreAccesoriosMes() < 0 || planesPreventivos.getCorreaArrastreAccesoriosMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
-		if (planPreventivo.getKitCorreaArrastreAccesoriosKm() < 0 || planPreventivo.getKitCorreaArrastreAccesoriosKm() > 1000000) {
+		if (planesPreventivos.getKitCorreaArrastreAccesoriosKm() < 0 || planesPreventivos.getKitCorreaArrastreAccesoriosKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getKitCorreaArrastreAccesoriosMes() < 0 || planPreventivo.getKitCorreaArrastreAccesoriosMes() > 200) {
+		if (planesPreventivos.getKitCorreaArrastreAccesoriosMes() < 0 || planesPreventivos.getKitCorreaArrastreAccesoriosMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
-		if (planPreventivo.getAnticongelanteKm() < 0 || planPreventivo.getAnticongelanteKm() > 1000000) {
+		if (planesPreventivos.getAnticongelanteKm() < 0 || planesPreventivos.getAnticongelanteKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getAnticongelanteMes() < 0 || planPreventivo.getAnticongelanteMes() > 200) {
+		if (planesPreventivos.getAnticongelanteMes() < 0 || planesPreventivos.getAnticongelanteMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
-		if (planPreventivo.getAceiteTransmisionKm() < 0 || planPreventivo.getAceiteTransmisionKm() > 1000000) {
+		if (planesPreventivos.getAceiteTransmisionKm() < 0 || planesPreventivos.getAceiteTransmisionKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getAceiteTransmisionMes() < 0 || planPreventivo.getAceiteTransmisionMes() > 200) {
+		if (planesPreventivos.getAceiteTransmisionMes() < 0 || planesPreventivos.getAceiteTransmisionMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
-		if (planPreventivo.getBujiasEncendidoKm() < 0 || planPreventivo.getBujiasEncendidoKm() > 1000000) {
+		if (planesPreventivos.getBujiasEncendidoKm() < 0 || planesPreventivos.getBujiasEncendidoKm() > 1000000) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Km NO pueden ser negativos ni mayores de 1 millon");
 		}
-		if (planPreventivo.getBujiasEncendidoMes() < 0 || planPreventivo.getBujiasEncendidoMes() > 200) {
+		if (planesPreventivos.getBujiasEncendidoMes() < 0 || planesPreventivos.getBujiasEncendidoMes() > 200) {
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Meses NO pueden ser negativos ni mayores de 200");
 		}
 	}

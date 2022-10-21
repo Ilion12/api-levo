@@ -1,0 +1,44 @@
+li.nav-item{
+    height: 3rem;
+    background-color: #004d40;
+    font-weight: bold;
+    font-size: 16px;
+    border-top-color: #fdd835;
+    border-style: solid;
+    border-left-color: #fdd835;
+    border-right-color: #fdd835;
+    
+}
+
+a{
+    color:#fdd835;
+}
+
+ul.nav{
+    margin-left: -20px;
+}
+
+ul.nav-pills{
+    margin-left:0;
+}
+
+#lineaInferior{
+    margin-top:-2rem;
+    height: 3rem;
+    background-color: #004d40;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    border-top-color: #fdd835;
+    border-style: solid;
+    border-left-color: #004d40;
+    border-right-color: #004d40;
+    border-bottom-color: #004d00;
+}
+
+div.overflow-hidden{
+    height:400px;
+    width: 400px;
+    border-width: 1px;
+    font-weight: bold;
+}

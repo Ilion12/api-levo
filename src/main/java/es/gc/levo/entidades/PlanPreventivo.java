@@ -14,7 +14,7 @@ import es.gc.levo.repositorios.PlanPreventivoListener;
 
 @Entity
 @EntityListeners(PlanPreventivoListener.class)
-@Table(name="PLAN_PREVENTIVO")
+@Table(name="PLANES_PREVENTIVOS")
 public class PlanPreventivo {
 	
 	@Id
@@ -25,10 +25,10 @@ public class PlanPreventivo {
 	@Column(name = "CONDICIONES_USO")
 	private String condicionesUso;
 		
-	@Column(name = "COMENTARIOS")
-	private String comentarios;
+	@Column(name = "OBSERVACIONES")
+	private String observaciones;
 	
-	@OneToOne(fetch=FetchType.LAZY, mappedBy="planMantenimientoPreventivo")
+	@OneToOne(fetch=FetchType.LAZY, mappedBy="planespreventivos")
 	private Vehiculo vehiculo;
 	
 	private int liquidoFrenosKm;
@@ -72,12 +72,12 @@ public class PlanPreventivo {
 		this.condicionesUso = condicionesUso;
 	}
 
-	public String getComentarios() {
-		return comentarios;
+	public String getObservaciones() {
+		return observaciones;
 	}
 
-	public void setComentarios(String comentarios) {
-		this.comentarios = comentarios;
+	public void setOservaciones(String observaciones) {
+		this.observaciones = observaciones;
 	}
 
 	public Vehiculo getVehiculo() {

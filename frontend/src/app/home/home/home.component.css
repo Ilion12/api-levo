@@ -1,0 +1,40 @@
+#libroRojo{
+    height: 250px;
+    width: 250px;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    margin-left: -50px;
+}
+
+input.form-control{
+    width: 4in;
+}
+
+label.form-label{
+
+    text-align: left;
+
+}
+label.form-check-label{
+    text-align: left;
+    margin-left: -150px;
+}
+
+#lineaInferior{
+    margin-top:-2rem;
+    height: 3rem;
+    background-color: #004d40;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    border-top-color: #fdd835;
+    border-style: solid;
+    border-left-color: #004d40;
+    border-right-color: #004d40;
+    border-bottom-color: #004d00;
+}
+
+button{
+    background-color: #004d40;
+    margin-bottom: 2rem;
+}

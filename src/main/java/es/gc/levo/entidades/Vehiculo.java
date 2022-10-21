@@ -56,57 +56,16 @@ public class Vehiculo {
 	@Column(name = "FECHA_ADJUDICACION")
 	private LocalDate fechaAdjudicacion;
 	
-	@Column(name = "BASTIDOR")
-	private String bastidor;
-	
-	@Column(name = "COLOR")
-	private String color;
-
-	@Column(name = "COMBUSTIBLE")
-	private String combustible;
-	
-	@Column(name = "CAMBIO")
-	private String cambio;
-	
-	@Column(name = "CAPACIDAD_DEPOSITO")
-	private float capacidadDeposito;
-	
-	@Column(name = "LUBRICANTE_MOTOR")
-	private String lubricanteMotor;
-	
-	@Column(name = "CAPACIDAD_CARTER")
-	private float capacidadCarter;
-	
-	@Column(name = "PRESION_NEUMATICOS_DELANTEROS")
-	private float presionNeumaticosDelanteros;
-	
-	@Column(name = "PRESION_NEUMATICOS_TRASEROS")
-	private float presionNeumaticosTraseros;
-	
-	@Column(name = "TIPO_CUBIERTAS")
-	private String tipoCubiertas;
-	
-	@Column(name = "NUMERO_BATERIAS")
-	private int numeroBaterias;
-	
-	@Column(name = "VOLTAJE_BATERIAS")
-	private float voltajeBaterias;
-	
-	@Column(name = "Amph_BATERIAS")
-	private float amperiosHoraBaterias;
-	
-	@Column(name = "Amp_BATERIAS")
-	private float amperajeBaterias;
-	
-	@Column(name = "CLASIFICACION_MEDIOAMBIENTAL")
-	private String clasificacionMedioambiental;
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="DTI_ID")
+	private DatoTecnicoInteres datosTecnicosInteres;
 	
 	@OneToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="PMP_ID")
-	private PlanPreventivo planMantenimientoPreventivo;
+	@JoinColumn(name="PP_ID")
+	private PlanPreventivo planespreventivos;
 	
 	@OneToMany(cascade = CascadeType.ALL, targetEntity = MantenimientoRealizado.class, mappedBy = "vehiculo")
-	private List<MantenimientoRealizado> mantenimientosRealizados = new ArrayList<>();
+	private List<MantenimientoRealizado> mantenimientosrealizados = new ArrayList<>();
 	
 	public String getMatricula() {
 		return matricula;
@@ -180,145 +139,35 @@ public class Vehiculo {
 		this.fechaAdjudicacion = fechaAdjudicacion;
 	}
 
-	public String getBastidor() {
-		return bastidor;
+	public DatoTecnicoInteres getDatosTecnicosInteres() {
+		return datosTecnicosInteres;
 	}
 
-	public void setBastidor(String bastidor) {
-		this.bastidor = bastidor;
+	public void setDatosTecnicosInteres(DatoTecnicoInteres datosTecnicosInteres) {
+		this.datosTecnicosInteres = datosTecnicosInteres;
+	}	
+
+
+
+	public PlanPreventivo getPlanespreventivos() {
+		return planespreventivos;
 	}
 
-	public String getColor() {
-		return color;
-	}
-
-	public void setColor(String color) {
-		this.color = color;
-	}
-
-	public String getCombustible() {
-		return combustible;
-	}
-
-	public void setCombustible(String combustible) {
-		this.combustible = combustible;
-	}
-
-	public String getCambio() {
-		return cambio;
-	}
-
-	public void setCambio(String cambio) {
-		this.cambio = cambio;
-	}
-
-	public float getCapacidadDeposito() {
-		return capacidadDeposito;
-	}
-
-	public void setCapacidadDeposito(float capacidadDeposito) {
-		this.capacidadDeposito = capacidadDeposito;
-	}
-
-	public String getLubricanteMotor() {
-		return lubricanteMotor;
-	}
-
-	public void setLubricanteMotor(String lubricanteMotor) {
-		this.lubricanteMotor = lubricanteMotor;
-	}
-
-	public float getCapacidadCarter() {
-		return capacidadCarter;
-	}
-
-	public void setCapacidadCarter(float capacidadCarter) {
-		this.capacidadCarter = capacidadCarter;
-	}
-
-	public float getPresionNeumaticosDelanteros() {
-		return presionNeumaticosDelanteros;
-	}
-
-	public void setPresionNeumaticosDelanteros(float presionNeumaticosDelanteros) {
-		this.presionNeumaticosDelanteros = presionNeumaticosDelanteros;
-	}
-
-	public float getPresionNeumaticosTraseros() {
-		return presionNeumaticosTraseros;
-	}
-
-	public void setPresionNeumaticosTraseros(float presionNeumaticosTraseros) {
-		this.presionNeumaticosTraseros = presionNeumaticosTraseros;
-	}
-
-	public String getTipoCubiertas() {
-		return tipoCubiertas;
-	}
-
-	public void setTipoCubiertas(String tipoCubiertas) {
-		this.tipoCubiertas = tipoCubiertas;
-	}
-
-	public int getNumeroBaterias() {
-		return numeroBaterias;
-	}
-
-	public void setNumeroBaterias(int numeroBaterias) {
-		this.numeroBaterias = numeroBaterias;
-	}
-
-	public float getVoltajeBaterias() {
-		return voltajeBaterias;
-	}
-
-	public void setVoltajeBaterias(float voltajeBaterias) {
-		this.voltajeBaterias = voltajeBaterias;
-	}
-
-	public float getAmperiosHoraBaterias() {
-		return amperiosHoraBaterias;
-	}
-
-	public void setAmperiosHoraBaterias(float amperiosHoraBaterias) {
-		this.amperiosHoraBaterias = amperiosHoraBaterias;
-	}
-
-	public float getAmperajeBaterias() {
-		return amperajeBaterias;
-	}
-
-	public void setAmperajeBaterias(float amperajeBaterias) {
-		this.amperajeBaterias = amperajeBaterias;
-	}
-
-	public String getClasificacionMedioambiental() {
-		return clasificacionMedioambiental;
-	}
-
-	public void setClasificacionMedioambiental(String clasificacionMedioambiental) {
-		this.clasificacionMedioambiental = clasificacionMedioambiental;
-	}
-
-	public PlanPreventivo getPlanMantenimientoPreventivo() {
-		return planMantenimientoPreventivo;
-	}
-
-	public void setPlanMantenimientoPreventivo(PlanPreventivo planMantenimientoPreventivo) {
-		this.planMantenimientoPreventivo = planMantenimientoPreventivo;
+	public void setPlanespreventivos(PlanPreventivo planespreventivos) {
+		this.planespreventivos = planespreventivos;
 	}
 
 	public List<MantenimientoRealizado> getMantenimientosRealizados() {
-		return mantenimientosRealizados;
+		return mantenimientosrealizados;
 	}
 
-	public void setMantenimientosRealizados(List<MantenimientoRealizado> mantenimientosRealizados) {
-		this.mantenimientosRealizados = mantenimientosRealizados;
+	public void setMantenimientosRealizados(List<MantenimientoRealizado> mantenimientosrealizados) {
+		this.mantenimientosrealizados = mantenimientosrealizados;
 	}
 	
-	public void addMantenimientoRealizado(MantenimientoRealizado mantenimientoRealizado) {
-		getMantenimientosRealizados().add(mantenimientoRealizado);
-		mantenimientoRealizado.setVehiculo(this);
+	public void addMantenimientoRealizado(MantenimientoRealizado mantenimientorealizado) {
+		getMantenimientosRealizados().add(mantenimientorealizado);
+		mantenimientorealizado.setVehiculo(this);
 	}
 
 	public Vehiculo() {}
