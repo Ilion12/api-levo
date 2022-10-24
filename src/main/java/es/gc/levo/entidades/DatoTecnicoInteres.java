@@ -1,5 +1,7 @@
 package es.gc.levo.entidades;
 
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;

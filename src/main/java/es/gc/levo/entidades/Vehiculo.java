@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import es.gc.levo.repositorios.VehiculoListener;
@@ -56,11 +57,11 @@ public class Vehiculo {
 	@Column(name = "FECHA_ADJUDICACION")
 	private LocalDate fechaAdjudicacion;
 	
-	@OneToOne(fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name="DTI_ID")
 	private DatoTecnicoInteres datosTecnicosInteres;
 	
-	@OneToOne(fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name="PP_ID")
 	private PlanPreventivo planespreventivos;
 	
