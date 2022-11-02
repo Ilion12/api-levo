@@ -65,7 +65,7 @@ public class Vehiculo {
 	@JoinColumn(name="PP_ID")
 	private PlanPreventivo planespreventivos;
 	
-	@OneToMany(cascade = CascadeType.ALL, targetEntity = MantenimientoRealizado.class, mappedBy = "vehiculo")
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = MantenimientoRealizado.class, mappedBy = "vehiculo")
 	private List<MantenimientoRealizado> mantenimientosrealizados = new ArrayList<>();
 	
 	public String getMatricula() {

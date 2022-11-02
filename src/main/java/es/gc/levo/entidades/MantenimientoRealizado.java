@@ -34,8 +34,8 @@ public class MantenimientoRealizado {
 	@Column(name = "MESES_MANTENIMIENTO")
 	private int mesesMantenimiento;
 	
-	@Column(name = "COMENTARIOS")
-	private String comentarios;
+	@Column(name = "OBSERVACIONES")
+	private String observaciones;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "V_ID")
@@ -82,12 +82,12 @@ public class MantenimientoRealizado {
 		this.mesesMantenimiento = mesesMantenimiento;
 	}
 
-	public String getComentarios() {
-		return comentarios;
+	public String getObservaciones() {
+		return observaciones;
 	}
 
-	public void setComentarios(String comentarios) {
-		this.comentarios = comentarios;
+	public void setObservaciones(String observaciones) {
+		this.observaciones = observaciones;
 	}
 	
 	public Vehiculo getVehiculo() {
